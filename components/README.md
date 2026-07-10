@@ -33,6 +33,7 @@ Dependencies หลัก: `framer-motion`, `next/image`, `lucide-react`, `@/lib
 | `text-reveal.tsx` | `TextRevealByWord` | Scroll-driven fade in ทีละคำ (ต้องการ scroll room) |
 | `hand-writing-text.tsx` | `HandWrittenTitle` | SVG วาดกรอบวงรีล้อมข้อความเหมือนขีดด้วยมือ |
 | `hero-highlight.tsx` | `HeroHighlight`, `Highlight` | Dot pattern + gradient ไล่ตาม cursor, `Highlight` ใช้ครอบ text |
+| `text-rotate.tsx` | `TextRotate` | สลับข้อความหลายชุดแบบ rotate ทีละคำ/ตัวอักษร พร้อม stagger animation — เหมาะหัวข้อที่ต้องการโชว์คำหลายคำสลับกัน |
 
 ---
 
@@ -52,3 +53,10 @@ Dependencies หลัก: `framer-motion`, `next/image`, `lucide-react`, `@/lib
   <h1>สร้าง <Highlight>สิ่งดีๆ</Highlight> ด้วยกัน</h1>
 </HeroHighlight>
 ```
+
+**TextRotate**
+- `texts` — `string[]` (required) — ชุดข้อความที่จะสลับกันแสดง
+- `rotationInterval?` — ms ระหว่างการสลับ (default `2000`)
+- `splitBy?` — `"words" | "characters" | "lines"` (default `"characters"`)
+- `loop?`, `auto?` — วนซ้ำ/เล่นอัตโนมัติ (default ทั้งคู่ `true`)
+- ควบคุมด้วย ref ได้: `next()`, `previous()`, `jumpTo(i)`, `reset()`
